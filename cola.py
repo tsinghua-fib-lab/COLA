@@ -86,7 +86,10 @@ def stance_analysis(tweet, ling_response, expert_response, user_response, target
                           The content enclosed by --- ---  represents the analysis of a heavy social media user. Identify the top three pieces of evidence from these that best support your opinion and argue for your opinion.")
 
 
-#This is an example of a prompt for the final judgement stage. Most of the time, this prompt can be used directly; for some targets, it needs to include a more detailed explanation of the task.
+#This is an example of a prompt for the final judgement stage. Most of the time, this prompt can be used directly; 
+#for some targets, it needs to include a more detailed explanation of the task to achieve the performance reported in our paper.
+#We believe that automating the addition of specific explanations and evaluation criteria for the task is a direction for future improvement.
+#If you have questions here, welcome to discuss with me.
 def final_judgement(tweet, favor_response, against_response, target):
     judgement=get_completion(f"Determine whether the sentence is in favor of or against {target}, or is irrelevant to {target}.\n \
                              Sentence: {tweet}\nJudge this in relation to the following arguments:\n\
@@ -146,4 +149,5 @@ add_predictions_sequential(data)
 
 # Save the modified data back to a CSV
 data.to_csv("result_cola.csv", index=False)
+
 
