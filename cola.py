@@ -132,7 +132,7 @@ def add_predictions_sequential(data):
             'User Analysis': user_response,
             'In Favor': favor_response,
             'Against': against_response,
-            'Final Judgement': final_response  # I changed 'Lan' to 'Final Judgement' for clarity
+            'Final Judgement': final_response
         }
         results.append(result)
 
